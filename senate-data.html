@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
+    <meta charset="utf-8">
+    <title>Access and Display Public Data</title>
   </head>
     
   <body>
-         
+    <pre id="senate-data"> 
+    </pre>
+    
+    <script src="js/pro-congress-113-senate.js"></script>
+    <script>
+      document.getElementById("senate-data").innerHTML = JSON.stringify(data,null,2);
+    </script>
   </body>
 </html>
