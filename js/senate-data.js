@@ -6,7 +6,7 @@ var parent = document.getElementById('senate-data'); //Toma como elemento padre 
 // Comienzo del proceso del <thead>
 var thead = document.createElement("thead");
 var trHead = document.createElement("tr");
-var thText=["Senator","Party","State","Seniority","% Party Votes"];
+var thText=["Senator","Party Affilication","State","Seniority","% Party Votes"];
 
 for(var i = 0; i<thText.length; i++){
   var th = document.createElement("th");
@@ -29,8 +29,13 @@ for(var i=0; i < numMiembros; i++){
   }
   fullName += " " + miembros[i].last_name;
   
+  var a = document.createElement("a");
+  a.href = miembros[i].url;
+  a.innerText = fullName;
+  
   var tdName = document.createElement("td");
-  tdName.innerText = fullName;
+  tdName.appendChild(a);
+  
   var tdParty = document.createElement("td");
   tdParty.innerText = miembros[i].party;
   var tdState = document.createElement("td");
@@ -45,6 +50,7 @@ for(var i=0; i < numMiembros; i++){
   tr.appendChild(tdState);
   tr.appendChild(tdSeniority);
   tr.appendChild(tdVotes_with_party_pct);
+  
   tbody.appendChild(tr);
   
 }
