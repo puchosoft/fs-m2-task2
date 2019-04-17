@@ -1,9 +1,9 @@
-// document.getElementById("senate-data").innerHTML = JSON.stringify(data,null,2);
-
 var numMiembros = data.results[0].num_results;
 var miembros = data.results[0].members;
 
-var parent = document.getElementById('senate-data');
+var parent = document.getElementById('senate-data'); //Toma como elemento padre a una tabla
+
+// Comienzo del proceso del <thead>
 var thead = document.createElement("thead");
 var trHead = document.createElement("tr");
 var thText=["Senator","Party","State","Seniority","% Party Votes"];
@@ -15,9 +15,12 @@ for(var i = 0; i<thText.length; i++){
 }
 thead.appendChild(trHead);
 parent.appendChild(thead);
+// Fin del proceso del <thead>
 
+// Comienzo del proceso del <tbody>
 var tbody = document.createElement("tbody");
 
+// Comienzo del recorrido del array de senadores
 for(var i=0; i < numMiembros; i++){
   var tr = document.createElement("tr");
   var fullName = miembros[i].first_name;
@@ -46,3 +49,4 @@ for(var i=0; i < numMiembros; i++){
   
 }
 parent.appendChild(tbody);
+// Fin del proceso del <tbody>
