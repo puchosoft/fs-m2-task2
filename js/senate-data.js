@@ -7,10 +7,9 @@ var parent = document.getElementById('senate-data');
 var thead = document.createElement("thead");
 var trHead = document.createElement("tr");
 var thText=["Senator","Party","State","Seniority","% Party Votes"];
-var th = document.createElement("th");
 
-for(var i=0; i<thText.length; i++){
-  console.log(thText[i]);
+for(var i = 0; i<thText.length; i++){
+  var th = document.createElement("th");
   th.innerText = thText[i];
   trHead.appendChild(th);
 }
