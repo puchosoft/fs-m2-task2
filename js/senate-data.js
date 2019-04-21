@@ -6,7 +6,7 @@ var parent = document.getElementById('senate-data'); //Toma como elemento padre 
 // Comienzo del proceso del <thead>
 var thead = document.createElement("thead");
 var trHead = document.createElement("tr");
-var thText=["Senator","Party Affilication","State","Seniority","% Party Votes"];
+var thText=["Name","Party","State","Years in Office","% Votes w/ Party"];
 
 for(var i = 0; i<thText.length; i++){
   var th = document.createElement("th");
