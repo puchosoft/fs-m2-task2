@@ -7,7 +7,7 @@ header {
   margin-bottom:1em;
 }
 
-.row#cabecera {
+.row#cabecera , .row#cuerpo{
   display: flex;
 }
 
@@ -23,7 +23,7 @@ header {
 .texto-principal {
   text-indent: 2em;
   text-align: justify;
-  margin-bottom:2em;
+  margin-bottom:1em;
 }
 
 td, th {
