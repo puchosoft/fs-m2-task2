@@ -36,9 +36,7 @@ function getTBody(){
   for(var i=0; i < numMiembros; i++){
     var tr = document.createElement("tr");
     var fullName = miembros[i].first_name;
-    if(miembros[i].middle_name){
-      fullName += " " + miembros[i].middle_name;
-    }
+    fullName += (miembros[i].middle_name?" "+miembros[i].middle_name:"");
     fullName += " " + miembros[i].last_name;
 
     var a = document.createElement("a");
