@@ -2,12 +2,12 @@
 // Crea y agrega un <thead> y un <tbody> a una tabla con id="table-data"
 // Los datos son obtenidos de un objeto externo "data"
 // *********************************************************************
-var numMiembros = data.results[0].num_results;
-var miembros = data.results[0].members;
-
-var table = document.getElementById('table-data');
-table.appendChild(getTHead());
-table.appendChild(getTBody());
+function setTable(miembros){
+  var table = document.getElementById('table-data');
+  table.innerHTML="";
+  table.appendChild(getTHead());
+  table.appendChild(getTBody(miembros));
+}
 
 // *************************************************
 // Funcion que devuelve un objeto <thead> formateado
@@ -23,17 +23,16 @@ function getTHead(){
     trHead.appendChild(th);
   }
   thead.appendChild(trHead);
-
   return(thead);
 }
 
 // *************************************************
 // Funcion que devuelve un objeto <tbody> formateado
 // *************************************************
-function getTBody(){
+function getTBody(miembros){
   var tbody = document.createElement("tbody");
 
-  for(var i=0; i < numMiembros; i++){
+  for(var i=0; i < miembros.length; i++){
     var tr = document.createElement("tr");
     var fullName = miembros[i].first_name;
     fullName += (miembros[i].middle_name?" "+miembros[i].middle_name:"");
