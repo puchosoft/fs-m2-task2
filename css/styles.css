@@ -29,7 +29,14 @@ th{
   background-color:darkgrey;
 }
 
+table{
+  table-layout:fixed;
+}
+
 td, th {
   text-align: center;
 }
 
+tr td:nth-Child(1){
+  text-align:left;
+}
